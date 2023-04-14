@@ -1,0 +1,31 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js", "config.js" ]
+   },
+   "browser_action": {
+      "default_icon": "kumquat16.png",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "css": [ "style.css" ],
+      "js": [ "content.js" ],
+      "matches": [ "https://*.myworkdayjobs.com/*", "https://boards.greenhouse.io/*", "https://jobs.lever.co/*", "https://*.taleo.net/*" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "description": "Autofill job applications with one click",
+   "icons": {
+      "128": "kumquat128.png",
+      "16": "kumquat16.png",
+      "48": "kumquat48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3qX8vC5JWypfOQK+eHmQLHZH5ovNjHIxhK/xuB2i2CQA5mpA/HsB9Hwl1iLrsY95YQfj8dpdlqXmhR8FhCniBDRXEmuMoN4B7LBi/3YTM5w4Ufit5chfsZCYDTd8y/T+PDQ1VPsFHFso8wWShdQc5hfv8CQ3B6UuDvkgn2YrEZgPRVJ1yUcV/jr0jR9TJxHAs5hUflzpVtJrthimvRhd1OZfue+khf4jEF9VC9AEadK+EjiaRrT6dB9/qNzAK96QGY5IV0CzX+Z8tQdkNGcReGJTfIew8rXhtHB3bc3NjgSXmTDMGZEVDBfA0Yi0Wjijm7lOV19XV5usEtiNu8SgeQIDAQAB",
+   "manifest_version": 2,
+   "name": "Kumquat",
+   "options_page": "index.html",
+   "permissions": [ "contextMenus", "tabs", "notifications", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.4",
+   "web_accessible_resources": [ "popup.html", "index.html", "*.png", "Roboto-Regular.ttf" ]
+}
